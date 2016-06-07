@@ -7,6 +7,7 @@ import doodle.backend.StandardInterpreter._
 // To use this example, open the SBT console and type:
 //
 // Example.image.draw
-object Example {
+object Example extends App {
   val image = Circle(10) on Circle(20) on Circle(30)
+  image.draw
 }

@@ -19,3 +19,5 @@ libraryDependencies ++= Seq(
   "underscoreio" %% "doodle" % "0.6.3",
   "org.typelevel" %% "cats" % "0.6.0"
 )
+
+//https://dl.dropboxusercontent.com/u/8669329/creative-scala.pdf
