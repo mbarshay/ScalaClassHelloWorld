@@ -9,6 +9,8 @@ initialCommands in console := """
       |import doodle.jvm.Java2DCanvas._
       |import doodle.backend.StandardInterpreter._
       |import doodle.examples._
+      |import doodle.turtle.Instruction._
+      |import doodle.turtle._
     """.trim.stripMargin
 
 cleanupCommands in console := """
@@ -16,7 +18,7 @@ cleanupCommands in console := """
     """.trim.stripMargin
 
 libraryDependencies ++= Seq(
-  "underscoreio" %% "doodle" % "0.6.3",
+  "underscoreio" %% "doodle" % "0.6.5",
   "org.typelevel" %% "cats" % "0.6.0"
 )
 
