@@ -11,6 +11,8 @@ initialCommands in console := """
       |import doodle.examples._
       |import doodle.turtle.Instruction._
       |import doodle.turtle._
+      |import doodle.random._
+      |import cats.syntax.cartesian._
     """.trim.stripMargin
 
 cleanupCommands in console := """
