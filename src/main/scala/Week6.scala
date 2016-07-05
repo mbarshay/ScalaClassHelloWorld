@@ -89,5 +89,39 @@ object Week6 extends App {
     rose(k) andThen perturb
 
 
+  val result: Random[Double] = Random.double
+  println(result)
+
+  val PriceToday : Random[Int] = Random.int
+  val noise : Random[Int] = Random.int
+  def PriceTomorrow(priceToday: Random[Int]) : Random[Int] = {
+    priceToday |@| noise map { (x,y) => x+y}
+  }
+
+  val tomorrow = PriceTomorrow(PriceToday)
+
+  def PriceNDaysIntoFuture(priceToday: Random[Int], daysIntoFuture : Int) : Random[Int] = {
+    daysIntoFuture match {
+      case 0 => priceToday
+      case m => PriceNDaysIntoFuture(priceToday |@| noise map { (x,y) => x+y},daysIntoFuture-1)
+    }
+  }
+
+  def PriceNDaysIntoFutureWithNoiseMethod(priceToday: Random[Int], daysIntoFuture : Int, func: (Int, Int) => Int) : Random[Int] = {
+    daysIntoFuture match {
+      case 0 => priceToday
+      case m => PriceNDaysIntoFuture(priceToday |@| noise map { (x,y) => func(x,y)},daysIntoFuture-1)
+    }
+  }
+
+
+
+
+
+
+
+
+
+
 
 }
